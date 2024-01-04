@@ -8,7 +8,7 @@ Can use 2d or 3d objects as projectiles with the projectile script and assign to
 
 Has a bunch of settings with tooltips.
 
-Doesn't have sound right now, might work on that or not.
+Has jank sound, be careful with duration of sound effects/how many different sound sources used (if having a large mix of projectiles with different sounds).
 
 Does not include Live2d sdk asset because no way I'm uploading all that.
 
