@@ -12,11 +12,11 @@ Doesn't have sound right now, might work on that or not.
 
 Does not include Live2d sdk asset because no way I'm uploading all that.
 
-[Throwing Stuff](Throwing%20Stuff.jpg)
+[Throwing Stuff](Throwing%20Stuff.jpg?raw=true)
 
 Make sure when you use the script to set the script execution order properly or else parameter updates might be overridden (the hits are additive so should be last).
 
-[Script Order](Script%20Execution%20Order.jpg)
+[Script Order](Script%20Execution%20Order.jpg?raw=true)
 
 Use this for whatever you want, this is mostly made so Vedal987 can use it if he wants.  I stress tested it and it shouldn't leak memory.
 
