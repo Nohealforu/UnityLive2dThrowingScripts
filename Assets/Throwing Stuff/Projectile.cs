@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
 	//  Once activated by spawn point, calculates velocity and begins flying each frame, estimates eta based on distance and initial velocity
 	//  Flies until reaching eta, initiates bounce based on settings and transfers momentum based on weight, velocity, and vector to model controller
     //  Possibly implement gravity of initial projectile, but will require aiming adjustments to make that work and limits to make sure target is always reachable.
-    [SerializeField][Tooltip("The weight determines impact of projectile")] private int weight = 20;
+    [SerializeField][Tooltip("The weight determines impact of projectile")] private int weight = 5;
     [SerializeField][Tooltip("Launch velocity of projectile (units per second)")] private float velocity = 20f;
     [SerializeField][Tooltip("Launch velocity variance of projectile")] private float velocityVariance = 8f;
     [SerializeField][Tooltip("Projectile spread (units radius at target position)")] private float spread = 0.5f;
