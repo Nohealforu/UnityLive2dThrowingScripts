@@ -21,6 +21,7 @@ public class Projectile : MonoBehaviour
     [SerializeField][Tooltip("Bounce spread angle after target hit (% from reverse)")] private float bounceSpreadAngle = 0.50f;
     [SerializeField][Tooltip("Bounce gravity after target hit")] private float bounceGravity = 5f;
     [SerializeField][Tooltip("Projectile lifespan after bounce")] private float bounceLifespan = 2f;
+    [SerializeField][Tooltip("Audio")] private AudioSource audioSource;
 
     // todo: add sound effect, audioclip or something? idk how Unity sound works and have to figure out how to not break it with 100s of projectiles
 
@@ -56,6 +57,8 @@ public class Projectile : MonoBehaviour
             currentVelocity = bounceVector.normalized * (bounceVelocity + UnityEngine.Random.Range(-bounceVelocityVariance, bounceVelocityVariance));
             currentRotationVector = (rotation3d ? UnityEngine.Random.onUnitSphere : new Vector3(0, 0, UnityEngine.Random.Range(-1f, 1f)));
             bounceDuration = 0f;
+            if(!audioSource.isPlaying)
+                audioSource.Play();
         }
         if(bouncing)
         {
