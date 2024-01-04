@@ -73,7 +73,7 @@ public class ProjectileTarget : MonoBehaviour
         // float newParamValue = param.Value + paramRange * (damageVector.x + damageVector.y + damageVector.z) + paramCenter;
         float newParamValue = param.Value + paramRange * Vector3.Scale((peristentDamageVector + temporaryDamageVector), paramPositiveDirection).magnitude + paramCenter;
         if(newParamValue + param.Value > param.MaximumValue || newParamValue + param.Value < param.MinimumValue)
-            newParamValue = paramCenter + (newParamValue + param.Value) % ((paramRange / 2) * schizoLevel);
+            newParamValue = paramCenter + (newParamValue + param.Value) % ((paramRange / 2) * schizoLevel); // This formula is garbage, do something with it.
         param.BlendToValue(CubismParameterBlendMode.Additive, newParamValue);
     }
 
