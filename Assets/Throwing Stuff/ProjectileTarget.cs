@@ -68,7 +68,9 @@ public class ProjectileTarget : MonoBehaviour
         float paramCenter = (param.MaximumValue + param.MinimumValue) / 2;
         // THIS IS WRONG and doesn't work right if the vector3 x,y,z component that matches paramPositiveDirection is negative because a magnitude is always positive.
         // I was trying to do something clever/lazy and it was actually dumb.
-        // TODO: Fix this
+        // TODO: Fix this with something like:
+        // Vector3 damageVector = Vector3.Scale((peristentDamageVector + temporaryDamageVector), paramPositiveDirection).magnitude;
+        // float newParamValue = param.Value + paramRange * (damageVector.x + damageVector.y + damageVector.z) + paramCenter;
         float newParamValue = param.Value + paramRange * Vector3.Scale((peristentDamageVector + temporaryDamageVector), paramPositiveDirection).magnitude + paramCenter;
         if(newParamValue + param.Value > param.MaximumValue || newParamValue + param.Value < param.MinimumValue)
             newParamValue = paramCenter + (newParamValue + param.Value) % ((paramRange / 2) * schizoLevel);
